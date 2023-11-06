@@ -61,31 +61,29 @@ Use the existing test cases as a template for writing your tests.
 
 ## Deployment to Cyclic
 
-To deploy the project to Cyclic, follow these steps:
+Cyclic allows you to deploy your Node.js applications directly from your GitHub repository. Here's how to deploy your project to Cyclic:
 
-1. Create an account on Cyclic.
+1. Create an account on [Cyclic](https://www.cyclic.sh/).
 
-2. Install the Cyclic CLI tool:
+2. Once logged in, click on the "New App" button.
 
-```bash
-npm install -g cyclic-cli
-```
+3. Connect your GitHub account to Cyclic if you haven't done so already.
 
-3. Log in to your Cyclic account using the CLI:
+4. Select the repository containing your book management API project.
 
-```bash
-cyclic login
-```
+5. Choose the branch you want to deploy.
 
-4. Deploy the application:
+6. Configure environment variables (such as `DB_URI`, `PORT`, and any other required by your application) in the settings of your Cyclic app.
 
-```bash
-cyclic deploy
-```
+7. Click the "Deploy" button to deploy your application.
 
-Follow the prompts to select the repository and branch you wish to deploy.
+8. Cyclic will automatically build and deploy your application, providing you with a unique URL to access your live API.
 
-Once deployed, Cyclic will provide a URL to access your live API.
+Remember to check the "Environment Variables" section in your Cyclic dashboard to set up all necessary keys and values that your application requires.
+
+## Monitoring and Logs
+
+After deployment, you can monitor your application and view logs directly from the Cyclic dashboard. This can help you troubleshoot any issues that arise during deployment or runtime.
 
 ## Documentation
 
