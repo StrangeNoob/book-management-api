@@ -13,7 +13,11 @@ router
 router
   .route("/:bookId")
   .get(bookValidator.paramIdBookValidation, bookController.getBook)
-  .put(bookValidator.updateBookValidation, bookController.updateBook)
+  .put(
+    bookValidator.paramIdBookValidation,
+    bookValidator.updateBookValidation,
+    bookController.updateBook
+  )
   .delete(bookValidator.paramIdBookValidation, bookController.deleteBook);
 
 module.exports = router;

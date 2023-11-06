@@ -1,6 +1,7 @@
 const joi = require("joi");
 const ApiError = require("../utils/ApiError");
 const httpStatus = require("http-status");
+const mongoose = require("mongoose");
 
 const createBookValidation = (req, res, next) => {
   const schema = joi.object({
@@ -79,6 +80,10 @@ const paramIdBookValidation = (req, res, next) => {
     throw new ApiError(httpStatus.BAD_REQUEST, error.message);
   }
 
+  const isValidParam = mongoose.Types.ObjectId.isValid(req.params.bookId);
+  if (!isValidParam) {
+    throw new ApiError(httpStatus.BAD_REQUEST, "BookId is invalid");
+  }
   return next();
 };
 
