@@ -4,8 +4,11 @@ info:
   description: This is a simple API for managing books with CRUD operations.
   version: "1.0.0"
 servers:
+  - url: "https://faithful-teddy-fox.cyclic.app/"
+    description: Production server
   - url: "http://localhost:3000/"
     description: Local server
+
 paths:
   /books:
     get:
